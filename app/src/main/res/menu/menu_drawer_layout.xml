@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/song_search_fragment"
+                    android:icon="@drawable/song_search_fragment"
+                    android:title="@string/search_screen" />
+                <item
+                    android:id="@+id/song_details_fragment"
+                    android:icon="@drawable/song_details_fragment"
+                    android:title="@string/details_screen" />
+            </group>
+
+</menu>

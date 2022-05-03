@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_song_fragment_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sky_blue">
+
+    <EditText
+        android:id="@+id/et_song_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:maxHeight="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/white"
+        android:hint="@string/search_hint"
+        android:imeOptions="actionSearch"
+        android:textColor="@color/black"
+        android:drawableStart="@drawable/search_icon"
+        android:drawablePadding="4dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="4dp"
+        android:maxLength="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_songs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_song_fragment" />
+
+    <ProgressBar
+        android:id="@+id/pb_song_fragment"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/cl_song_fragment_container"
+        app:layout_constraintLeft_toLeftOf="@id/cl_song_fragment_container"
+        app:layout_constraintRight_toRightOf="@id/cl_song_fragment_container"
+        app:layout_constraintTop_toTopOf="@id/cl_song_fragment_container"
+        android:visibility="invisible"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/light_orange"/>
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/flamingo"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:text="@string/api_error"
+        app:layout_constraintBottom_toBottomOf="@id/cl_song_fragment_container"
+        app:layout_constraintLeft_toLeftOf="@id/cl_song_fragment_container"
+        app:layout_constraintRight_toRightOf="@id/cl_song_fragment_container"
+        app:layout_constraintTop_toTopOf="@id/cl_song_fragment_container"
+        android:visibility="invisible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

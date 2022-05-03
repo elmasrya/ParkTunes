@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ParkTunes</string>
+    <string name="app_error">Application Error:&#160;</string>
+    <string name="api_error">Failed to retrieve data from iTunes:&#160;</string>
+    <string name="success_status">Successful Response</string>
+    <string name="song_title_default">Song Title Unavailable</string>
+    <string name="artist_name_default">Artist\'s Name Unavailable</string>
+    <string name="unknown_default">Unknown</string>
+    <string name="more_info">More Info</string>
+    <string name="album_cover_description">Image for Album Cover goes here</string>
+    <string name="search_songs">Search Songs</string>
+    <string name="play">&#9654;&#160;Play</string>
+    <string name="stop">&#x25A0;&#160;Stop</string>
+    <string name="artist_info">&#9733;&#160;Artist Info</string>
+    <string name="search_hint">Search iTunes</string>
+    <string name="search_screen">Song Search Screen</string>
+    <string name="details_screen">Song Details Screen</string>
+</resources>

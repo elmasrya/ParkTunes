@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/songSearchFragment">
+
+    <fragment
+        android:id="@+id/songSearchFragment"
+        android:name="io.parkmobile.parktunes.view.fragments.SongSearchFragment"
+        android:label="SongSearchFragment"
+        tools:layout="@layout/song_search_fragment">
+        <action
+            android:id="@+id/action_songSearchFragment_to_songDetailsFragment"
+            app:destination="@id/songDetailsFragment" />
+        <argument
+            android:name="artist_name"
+            app:argType="string" />
+        <argument
+            android:name="track_name"
+            app:argType="string" />
+        <argument android:name="explicit_status"
+            app:argType="string" />
+        <argument android:name="release_date"
+            app:argType="string" />
+        <argument android:name="artist_url"
+            app:argType="string" />
+        <argument android:name="track_kind"
+            app:argType="string" />
+        <argument android:name="preview_url"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/songDetailsFragment"
+        android:name="io.parkmobile.parktunes.view.fragments.SongDetailsFragment"
+        android:label="SongSearchFragment"
+        tools:layout="@layout/song_details_fragment">
+    </fragment>
+</navigation>

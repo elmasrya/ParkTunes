@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AparcarMelodías</string>
+    <string name="app_error">Error de la aplicación:&#160;</string>
+    <string name="api_error">Fallado en recibir datos de iTunes:&#160;</string>
+    <string name="success_status">Respuesta Exitosa</string>
+    <string name="song_title_default">Canción Desconocida</string>
+    <string name="artist_name_default">Artista Desconocido</string>
+    <string name="unknown_default">Tipo Desconocido</string>
+    <string name="more_info">Más Información</string>
+    <string name="album_cover_description">Portada del álbum</string>
+    <string name="search_songs">Buscar Canciones</string>
+    <string name="play">&#x25b6;&#160;Play</string>
+    <string name="stop">&#x25A0;;&#160;Stop</string>
+    <string name="artist_info">&#128279;&#160;Artist Info</string>
+    <string name="search_hint">Búsqueda</string>
+    <string name="search_screen">Song Search Screen</string>
+    <string name="details_screen">Song Details Screen</string>
+</resources>
