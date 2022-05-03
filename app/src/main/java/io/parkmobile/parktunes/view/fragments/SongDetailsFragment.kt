@@ -58,29 +58,13 @@ class SongDetailsFragment: Fragment(R.layout.song_details_fragment) {
         }
 
         binding.tvMediaControl.setOnClickListener {
-            binding.tvMediaControl.text = "Playing..."
-            binding.tvMediaControl.isEnabled = false
-            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
-            try {
-                mediaPlayer.setDataSource(musicUrl)
-                mediaPlayer.prepare()
-                mediaPlayer.start()
-                mediaPlayer.release()
-            } catch (e: IOException) {
-                e.printStackTrace()
+            if (binding.tvMediaControl.text.toString().contains("play")) {
+                binding.tvMediaControl.text = getString(R.string.stop)
+            } else {
+                binding.tvMediaControl.text = getString(R.string.play)
             }
-            Log.v(TAG, "Music is streaming")
         }
 
-    }
-
-    override fun onPause() {
-        super.onPause()
-        if (mediaPlayer.isPlaying || mediaPlayer.isLooping) {
-            mediaPlayer.stop()
-            mediaPlayer.release()
-            binding.tvMediaControl.text = getString(R.string.play)
-        }
     }
 
     override fun onDestroyView() {
