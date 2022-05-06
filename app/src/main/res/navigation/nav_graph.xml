@@ -13,22 +13,6 @@
         <action
             android:id="@+id/action_songSearchFragment_to_songDetailsFragment"
             app:destination="@id/songDetailsFragment" />
-        <argument
-            android:name="artist_name"
-            app:argType="string" />
-        <argument
-            android:name="track_name"
-            app:argType="string" />
-        <argument android:name="explicit_status"
-            app:argType="string" />
-        <argument android:name="release_date"
-            app:argType="string" />
-        <argument android:name="artist_url"
-            app:argType="string" />
-        <argument android:name="track_kind"
-            app:argType="string" />
-        <argument android:name="preview_url"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/songDetailsFragment"

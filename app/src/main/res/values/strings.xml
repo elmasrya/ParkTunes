@@ -12,7 +12,17 @@
     <string name="play">&#9654;&#160;Play</string>
     <string name="stop">&#x25A0;&#160;Stop</string>
     <string name="artist_info">&#9733;&#160;Artist Info</string>
+    <string name="no_results_found">No Results Found</string>
+    <string name="genre">Genre: </string>
+    <string name="explicit">Explicit&#160;-&#160;</string>
+    <string name="published">Published:&#160;</string>
+    <string name="collection">Collection&#160;-&#160;</string>
+    <string name="media">Media&#160;-&#160;</string>
+    <string name="interpunct">&#160;&#183;&#160;</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
     <string name="search_hint">Search iTunes</string>
     <string name="search_screen">Song Search Screen</string>
     <string name="details_screen">Song Details Screen</string>
+    <string name="buffering">Buffering…%1$s%%</string>
 </resources>

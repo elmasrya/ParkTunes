@@ -105,7 +105,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:background="@color/dark_gray" />
@@ -120,7 +120,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:background="@color/dark_gray" />
@@ -132,14 +132,6 @@
             android:textSize="16sp"
             android:padding="16dp"
             android:text="@string/unknown_default" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@color/dark_gray" />
-
     </LinearLayout>
 
 </ScrollView>

@@ -11,19 +11,22 @@
         android:id="@+id/et_song_fragment"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:maxHeight="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/white"
-        android:hint="@string/search_hint"
-        android:imeOptions="actionSearch"
-        android:textColor="@color/black"
         android:drawableStart="@drawable/search_icon"
         android:drawablePadding="4dp"
+        android:hint="@string/search_hint"
+        android:imeOptions="actionSearch"
+        android:maxHeight="50dp"
+        android:maxLength="20"
         android:paddingStart="8dp"
         android:paddingEnd="4dp"
-        android:maxLength="20"
+        android:autofillHints="name"
+        android:textColor="@color/black"
+        android:textColorHint="#757575"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,6 +39,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_song_fragment" />
 
@@ -66,4 +70,17 @@
         app:layout_constraintRight_toRightOf="@id/cl_song_fragment_container"
         app:layout_constraintTop_toTopOf="@id/cl_song_fragment_container"
         android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/tv_no_results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/no_results_found"
+        android:textSize="16sp"
+        android:textColor="#3E2723"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/rv_songs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_song_fragment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

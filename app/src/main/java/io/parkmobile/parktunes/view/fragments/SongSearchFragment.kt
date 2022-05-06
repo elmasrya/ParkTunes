@@ -4,29 +4,25 @@ import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
+import android.view.KeyEvent
 
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
-import android.widget.TextView
-import androidx.compose.ui.input.key.KeyEvent
 import androidx.core.widget.doAfterTextChanged
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import io.parkmobile.parktunes.R
 import io.parkmobile.parktunes.databinding.SongSearchFragmentBinding
-import io.parkmobile.parktunes.models.Song
 import io.parkmobile.parktunes.view.adapters.SongListAdapter
-import io.parkmobile.parktunes.viewmodels.SharedViewModel
+import io.parkmobile.parktunes.viewmodels.SongSharedViewModel
 
 
 class SongSearchFragment : Fragment(R.layout.song_search_fragment) {
-    private lateinit var handler:Handler;
-    private lateinit var searchRunnable:Runnable;
-    private lateinit var sViewModel: SharedViewModel
+    private lateinit var handler:Handler
+    private lateinit var searchRunnable:Runnable
+    val sViewModelSong: SongSharedViewModel by activityViewModels()
     private var _binding: SongSearchFragmentBinding? = null
     private val songsListAdapter = SongListAdapter(arrayListOf(), this)
     private  val binding get() = _binding!!
@@ -43,14 +39,13 @@ class SongSearchFragment : Fragment(R.layout.song_search_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        sViewModel = ViewModelProvider(this)[SharedViewModel::class.java]
 
         binding.rvSongs.layoutManager = LinearLayoutManager(view.context)
         binding.rvSongs.adapter = songsListAdapter
         handler = Handler(Looper.getMainLooper())
         searchRunnable = Runnable {
             val queryText:String = binding.etSongFragment.text.toString()
-            sViewModel.limitSearchItunesApiCall(view.context, queryText, "25")
+            sViewModelSong.limitSearchItunesApiCall(view.context, queryText, "25")
         }
 
         binding.etSongFragment.doAfterTextChanged {
@@ -59,20 +54,43 @@ class SongSearchFragment : Fragment(R.layout.song_search_fragment) {
                 handler.postDelayed(searchRunnable, 600L);
             }
         }
+
+        binding.etSongFragment.setOnKeyListener(View.OnKeyListener { v, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP) {
+                //Perform Code
+                handler.removeCallbacks(searchRunnable)
+                val queryText:String = binding.etSongFragment.text.toString()
+                sViewModelSong.limitSearchItunesApiCall(view.context, queryText, "25")
+                return@OnKeyListener false
+            }
+            false
+        })
         observeViewModel()
     }
 
     private fun observeViewModel() {
-        sViewModel.iTunesLiveData.observe(viewLifecycleOwner) {
+        sViewModelSong.iTunesLiveData.observe(viewLifecycleOwner) {
             songsListAdapter.updateSongList(it)
         }
-        sViewModel.iTunesLoadErrorLiveData.observe(viewLifecycleOwner) {
+
+        sViewModelSong.iTunesNoResultsLiveData.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.tvNoResults.visibility = View.VISIBLE
+                binding.rvSongs.visibility = View.GONE
+            } else {
+                binding.tvNoResults.visibility = View.GONE
+                binding.rvSongs.visibility = View.VISIBLE
+            }
+        }
+
+        sViewModelSong.iTunesLoadErrorLiveData.observe(viewLifecycleOwner) {
             binding.tvError.visibility = if (it) View.VISIBLE else View.GONE
         }
 
-        sViewModel.loadingLiveData.observe(viewLifecycleOwner) {
+        sViewModelSong.loadingLiveData.observe(viewLifecycleOwner) {
             if (it) {
                 binding.rvSongs.visibility = View.GONE
+                binding.tvNoResults.visibility = View.GONE
                 binding.pbSongFragment.visibility = View.VISIBLE
             } else {
                 binding.rvSongs.visibility = View.VISIBLE

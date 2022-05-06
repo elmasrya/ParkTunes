@@ -10,9 +10,19 @@
     <string name="album_cover_description">Portada del álbum</string>
     <string name="search_songs">Buscar Canciones</string>
     <string name="play">&#x25b6;&#160;Play</string>
-    <string name="stop">&#x25A0;;&#160;Stop</string>
+    <string name="stop">&#x25A0;&#160;Stop</string>
     <string name="artist_info">&#128279;&#160;Artist Info</string>
     <string name="search_hint">Búsqueda</string>
+    <string name="no_results_found">No Encontrado Resultados</string>
+    <string name="genre">Genre: </string>
+    <string name="explicit">Explícita&#160;-&#160;</string>
+    <string name="published">Publicado:&#160;</string>
+    <string name="collection">Recopilación&#160;-&#160;</string>
+    <string name="media">Tipo de Medio&#160;-&#160;</string>
+    <string name="interpunct">&#160;&#183;&#160;</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
     <string name="search_screen">Song Search Screen</string>
     <string name="details_screen">Song Details Screen</string>
+    <string name="buffering">Cargando…%1$s%%</string>
 </resources>
