@@ -1,14 +1,9 @@
 package io.parkmobile.parktunes.view.adapters
 
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.compose.ui.text.font.Font
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
-import io.parkmobile.parktunes.R
 import io.parkmobile.parktunes.databinding.SongListItemBinding
 import io.parkmobile.parktunes.models.Song
 import io.parkmobile.parktunes.view.fragments.SongSearchFragment
@@ -52,6 +47,5 @@ class  SongListAdapter(private val songList: ArrayList<Song>, private val fragme
         songList.clear()
         songList.addAll(updatedSongList)
         notifyDataSetChanged();
-
     }
 }

@@ -55,8 +55,8 @@ class SongSharedViewModel : ViewModel() {
                     iTunesNoResultsLiveData.value = true
                 } else {
                     iTunesLiveData.value = results
-                    iTunesNoResultsLiveData.value = false
                 }
+                iTunesNoResultsLiveData.value = false
                 loadingLiveData.value = false
                 ParkTunesToast(context, R.string.success_status).showShort();
             },{

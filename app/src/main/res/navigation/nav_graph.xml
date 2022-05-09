@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/songSearchFragment"
         android:name="io.parkmobile.parktunes.view.fragments.SongSearchFragment"
-        android:label="SongSearchFragment"
+        android:label="Welcome to ParkTunes"
         tools:layout="@layout/song_search_fragment">
         <action
             android:id="@+id/action_songSearchFragment_to_songDetailsFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/songDetailsFragment"
         android:name="io.parkmobile.parktunes.view.fragments.SongDetailsFragment"
-        android:label="SongSearchFragment"
+        android:label="Song Details"
         tools:layout="@layout/song_details_fragment">
     </fragment>
 </navigation>
